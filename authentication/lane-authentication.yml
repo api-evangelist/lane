@@ -1,0 +1,53 @@
+generated: '2026-07-19'
+method: probed
+source: >-
+  Embedded whitelabel configuration and JavaScript bundle served by https://app.joinlane.com/ and
+  https://assets.activate.vts.com/static/
+api_auth_documented: false
+note: >-
+  Lane publishes no OpenAPI definition, no developer portal and no authentication documentation, so
+  there is nothing to derive a securityScheme profile from and no Authentication pointer is wired in
+  apis.yml. What is recorded below is the observable end-user identity mechanism of the VTS Activate
+  application itself, captured so a later round does not have to rediscover it. It is an application
+  sign-in profile, not a documented API authentication contract.
+summary:
+  types:
+  - openIdConnect
+  identity_provider: Auth0
+  end_user_signup_allowed: true
+  magic_link_enabled: false
+schemes:
+- name: Auth0 tenant SSO
+  type: openIdConnect
+  provider: Auth0
+  organization_id: org_TkmIkPNpHVBXGFMX
+  applies_to: VTS Activate web and mobile application sign-in
+  source: https://app.joinlane.com/
+  evidence: >-
+    The application shell embeds an x-whitelabel meta payload containing
+    "auth0OrganizationId":"org_TkmIkPNpHVBXGFMX" and "isMagicLinkEnabled":false, alongside
+    "settings":{"allowSignUps":true,"emailSubscriptionOptIn":true}.
+- name: Platform SSO/Login
+  type: unknown
+  applies_to: VTS platform sign-in
+  source: https://status.vts.com/
+  evidence: The VTS status page tracks an "SSO/Login" component covering platform authentication.
+api_surface:
+  style: graphql
+  public: false
+  documented: false
+  evidence: >-
+    The application bundle at
+    https://assets.activate.vts.com/static/main.64f2999eb29bba37a547.js uses an Apollo GraphQL client
+    with operations including user.forgotPassword, user.requestAccountDeletion, user.updateUser,
+    getUserLogins, getProxyClickCompanies and queryChannelInvitesByGroupRole. No GraphQL endpoint,
+    schema or introspection surface is publicly documented, and no attempt was made to query it.
+  note: >-
+    The VTS status page lists an "APIs" component, indicating the parent platform operates APIs, but
+    no developer documentation for them is published (developer.vts.com and docs.vts.com do not
+    resolve; api.vts.com serves no OpenAPI, Swagger or docs path).
+third_party_integrations_observed:
+- {name: Stripe, purpose: in-app retail and food-service payments, evidence: https://js.stripe.com/v3/ loaded by the app shell}
+- {name: Google Maps, purpose: mapping, evidence: https://maps.googleapis.com/maps/api/js loaded by the app shell}
+- {name: Pendo, purpose: product analytics and in-app guides, evidence: content.p.activate.vts.com resolves to pendo.io}
+- {name: Retool, purpose: embedded internal tooling, evidence: retool.vts.com embedded public app referenced in the bundle}
