@@ -1,19 +1,54 @@
 aid: lane
 name: Lane
-description: Lane is a company surfaced as a portfolio company of techstars and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Lane is a workplace experience platform for commercial real estate, now operated as VTS Activate
+  after VTS acquired the company. The product gives building tenants a single mobile and web app for
+  keyless building, suite and room access, booking amenities and shared spaces such as meeting rooms,
+  fitness studios and desks, inviting and checking in visitors, receiving building information,
+  maintenance updates and alerts, and RSVPing to events or ordering and paying for retail and food
+  service. Landlords and property managers use it as the tenant-facing layer over the VTS commercial
+  real estate platform. The legal entity behind the apps is VTS LANE INC. and the joinlane.com
+  application traffic is served by the VTS Activate platform at activate.vts.com. Lane publishes no
+  public developer portal, API documentation, OpenAPI definition or SDKs; the product is delivered as
+  a first-party mobile and web application backed by an internal GraphQL API.
 url: https://raw.githubusercontent.com/api-evangelist/lane/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5b/43/73/5b437384-39a4-2b8e-602f-e9c414f30aa9/AppIcon-Lane-0-1x_U007epad-0-1-sRGB-85-220-0.png/512x512bb.jpg
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - techstars
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: acquired-no-public-api-program
+x-status: acquired
+x-acquired-by: VTS
+x-operating-name: VTS Activate
+x-legal-entity: VTS LANE INC.
+x-api-program: none
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Real Estate
+- Commercial Real Estate
+- Property Technology
+- Workplace
+- Tenant Experience
+- Building Access
+- Visitor Management
+- Amenity Booking
+- Mobile
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +58,24 @@ maintainers:
 common:
 - type: Website
   url: https://joinlane.com/
+- type: Application
+  url: https://app.joinlane.com/
+- type: StatusPage
+  url: https://status.vts.com/
+- type: Lifecycle
+  url: lifecycle/lane-lifecycle.yml
+- type: PrivacyPolicy
+  url: https://vts.com/privacy
+- type: DomainSecurity
+  url: security/lane-domain-security.yml
+- type: LLMsTxt
+  url: llms/lane-llms.txt
+- type: iOSApp
+  url: https://apps.apple.com/us/app/vts-activate/id1049113820
+- type: AndroidApp
+  url: https://play.google.com/store/apps/details?id=com.lane.lane
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
