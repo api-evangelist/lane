@@ -1,0 +1,30 @@
+# Lane (VTS Activate)
+
+> Lane is a workplace experience platform for commercial real estate, now operated as VTS Activate after VTS acquired the company. Tenants use a single mobile and web app for keyless building, suite and room access, booking amenities and shared spaces, visitor invitations and check-in, building alerts and maintenance updates, event RSVPs, and retail and food ordering. Landlords and property managers run it as the tenant-facing layer over the VTS commercial real estate platform. The legal entity behind the apps is VTS LANE INC.
+
+Lane publishes **no public API program**: there is no developer portal, no API documentation, no OpenAPI or AsyncAPI definition, no SDKs, no CLI and no MCP server. The application is backed by an internal GraphQL API that is not publicly documented and is not open to third-party developers. Do not represent Lane as having a public API.
+
+## Company
+
+- [Website](https://joinlane.com/): Lane marketing site, served behind a Cloudflare bot challenge.
+- [Application](https://app.joinlane.com/): the VTS Activate web application, whitelabelled to the "lane" instance and served from https://activate.vts.com/.
+- [Status page](https://status.vts.com/): Atlassian Statuspage operated by VTS; the "Activate" component is the Lane product.
+- [Privacy policy](https://vts.com/privacy): privacy policy declared by the app store listings.
+
+## Apps
+
+- [iOS app](https://apps.apple.com/us/app/vts-activate/id1049113820): "VTS Activate", bundle com.lane.lane, first released 2015-10-20.
+- [Android app](https://play.google.com/store/apps/details?id=com.lane.lane): package com.lane.lane.
+
+## Artifacts in this profile
+
+- [Lifecycle](lifecycle/lane-lifecycle.yml): acquisition status, status page and components, app release cadence.
+- [Authentication](authentication/lane-authentication.yml): observed Auth0 identity provider for application sign-in; no documented API auth contract.
+- [Domain security](security/lane-domain-security.yml): probed TLS, HSTS, DNSSEC, CAA, SPF and DMARC posture for joinlane.com.
+- [Well-known](well-known/lane-well-known.yml): probe record for /.well-known/ discovery documents; none are published.
+
+## Notes
+
+- Related profile: VTS, the acquiring company, is tracked separately in the API Evangelist network.
+- No security.txt, vulnerability disclosure program or trust center was found on any Lane or VTS host at probe time.
+- Last enriched 2026-07-19.

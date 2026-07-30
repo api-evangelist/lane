@@ -1,0 +1,68 @@
+generated: '2026-07-19'
+method: searched
+source: https://status.vts.com/ and the Apple App Store listing for the Lane / VTS Activate app
+company_lifecycle:
+  status: acquired
+  acquired_by: VTS
+  operating_name: VTS Activate
+  legal_entity: VTS LANE INC.
+  evidence:
+  - source: https://app.joinlane.com/
+    detail: >-
+      The Lane application origin serves the VTS Activate single-page app. Its embedded whitelabel
+      configuration carries instance "lane", operatingName "VTS Activate" and
+      baseUrl "https://activate.vts.com/".
+  - source: https://itunes.apple.com/lookup?id=1049113820
+    detail: >-
+      The iOS app formerly listed as "Lane - Smart Workplaces" is now titled "VTS Activate" and sold
+      by "VTS LANE INC."; the bundle identifier is still com.lane.lane.
+status_page:
+  url: https://status.vts.com/
+  provider: Atlassian Statuspage
+  covers_lane: true
+  components:
+  - Activate
+  - APIs
+  - SSO/Login
+  - Mobile Apps
+  - Integrations
+  - Lease
+  - Market
+  - Marketplace
+  - Business Analytics
+  - Emails
+  - VTS Data
+  - Rise
+  note: >-
+    The "Activate" component is the Lane product. The status page is operated by VTS for the whole
+    platform; Lane has no separate status page. https://status.joinlane.com does not resolve.
+product_releases:
+  channel: mobile-app-stores
+  ios:
+    store_url: https://apps.apple.com/us/app/vts-activate/id1049113820
+    bundle_id: com.lane.lane
+    first_released: '2015-10-20'
+    current_version: 5.820.0
+    current_version_released: '2026-07-16'
+    minimum_os: '15.5'
+  android:
+    store_url: https://play.google.com/store/apps/details?id=com.lane.lane
+    package: com.lane.lane
+  note: >-
+    Release cadence is observable only through the app stores. No dated changelog, release-notes feed
+    or versioning policy is published on a Lane or VTS web property, so no changelog/ artifact was
+    written this round.
+versioning:
+  scheme: none-published
+  docs: null
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: No deprecation or sunset policy is published; there is no public API contract to deprecate.
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    Uptime is reported per component on the status page (Activate showed 100.0% over the trailing 90
+    days at probe time), but no contractual SLA document is public.
+deprecated_operations: []

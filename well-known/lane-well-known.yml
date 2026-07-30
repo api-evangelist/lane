@@ -1,0 +1,77 @@
+generated: '2026-07-19'
+method: probed
+source: live HTTP probes of joinlane.com, app.joinlane.com, activate.vts.com and api.vts.com
+result: none-found
+notes: >-
+  No /.well-known/ discovery documents were served by any Lane / VTS Activate host. The marketing
+  origin joinlane.com sits behind a Cloudflare bot challenge that returns 403 to non-browser clients
+  for every path including /robots.txt, so its 403s are a blanket challenge rather than evidence that
+  the documents are absent. The application origins (activate.vts.com, api.vts.com) answer normally
+  and return genuine 404s, which is real evidence that no well-known surface is published there.
+  No pointer of type WellKnown, APICatalog or SecurityTxt is wired in apis.yml because nothing was
+  found. Re-probe on the next round.
+hosts:
+- host: https://joinlane.com
+  reachable: true
+  challenge: cloudflare-403
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/openid-configuration
+    status: 403
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403
+  - path: /.well-known/ai-plugin.json
+    status: 403
+  - path: /llms.txt
+    status: 403
+  - path: /robots.txt
+    status: 403
+- host: https://activate.vts.com
+  reachable: true
+  challenge: none
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /robots.txt
+    status: 404
+- host: https://api.vts.com
+  reachable: true
+  challenge: none
+  documents:
+  - path: /
+    status: 200
+    body: Ok
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /swagger.json
+    status: 404
+  - path: /docs
+    status: 404
+  - path: /v1
+    status: 404
+subdomains_checked:
+- {host: docs.joinlane.com, dns: NXDOMAIN}
+- {host: api.joinlane.com, dns: NXDOMAIN}
+- {host: developer.joinlane.com, dns: NXDOMAIN}
+- {host: developers.joinlane.com, dns: NXDOMAIN}
+- {host: status.joinlane.com, dns: NXDOMAIN}
+- {host: blog.joinlane.com, dns: NXDOMAIN}
+- {host: trust.joinlane.com, dns: NXDOMAIN}
+- {host: app.joinlane.com, dns: resolved, status: 200}
+- {host: developer.vts.com, dns: NXDOMAIN}
+- {host: docs.vts.com, dns: NXDOMAIN}
+- {host: trust.vts.com, dns: NXDOMAIN}
+- {host: security.vts.com, dns: NXDOMAIN}
+- {host: api.vts.com, dns: resolved, status: 200}
+- {host: status.vts.com, dns: resolved, status: 200}
