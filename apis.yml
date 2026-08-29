@@ -11,6 +11,17 @@ description: Lane is a workplace experience platform for commercial real estate,
   public developer portal, API documentation, OpenAPI definition or SDKs; the product is delivered as
   a first-party mobile and web application backed by an internal GraphQL API.
 url: https://raw.githubusercontent.com/api-evangelist/lane/refs/heads/main/apis.yml
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
