@@ -52,9 +52,9 @@ created: '2026-07-17'
 modified: '2026-07-19'
 tags:
 - Company
-- Real-Estate
+- Real Estate
 - Commercial Real Estate
-- Property Technology
+- PropTech
 - Workplace
 - Tenant Experience
 - Building Access
@@ -72,6 +72,7 @@ tags_raw:
 - Visitor Management
 - Amenity Booking
 - Mobile
+- Real-Estate
 apis: []
 maintainers:
 - FN: Kin Lane
